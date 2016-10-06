@@ -33,7 +33,7 @@ def add_item_rater_data_info(apps, schema_editor):
         for row in data_info:
             rater = Rater.objects.get(id=row[0])
             item = Item.objects.get(id=row[0])
-            Data.objects.create(rater_id=rater,item_id=item,rating=row[2],time_stamp=row[3])
+            Data.objects.create(rater=rater,item=item,rating=row[2],time_stamp=row[3])
 
 
 class Migration(migrations.Migration):

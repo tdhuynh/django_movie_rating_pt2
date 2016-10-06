@@ -37,7 +37,7 @@ class Rater(models.Model):
 
 
 class Data(models.Model):
-    rater_id = models.ForeignKey(Rater)
-    item_id = models.ForeignKey(Item)
+    rater = models.ForeignKey(Rater)
+    item = models.ForeignKey(Item)
     rating = models.IntegerField()
     time_stamp = models.IntegerField()
