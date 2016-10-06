@@ -28,6 +28,8 @@ class Item(models.Model):
     def __str__(self):
         return self.title
 
+    
+
 
 class Rater(models.Model):
     age = models.IntegerField()
