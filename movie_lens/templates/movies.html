@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>All Movies</title>
+  </head>
+  <body>
+    <a href="/">Back to Home Page</a>
+    <h1>All Rated Movies</h1>
+    <p>
+      {% for row in all_movies %}
+        <p>
+          <a href="/mov_det/{{ row.id }}">{{ row }}</a>, {{ row.avg_movie_rating }}
+        </p>
+      {% endfor %}
+    </p>
+  </body>
+</html>
