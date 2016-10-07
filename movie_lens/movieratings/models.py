@@ -31,7 +31,8 @@ class Item(models.Model):
         return self.title
 
     def avg_movie_rating(self):
-        return Data.objects.filter(item=self.id).aggregate(Avg('rating'))
+        return Data.objects.filter(item=self).aggregate(Avg('rating')).get('rating__avg')
+
 
 class Rater(models.Model):
     age = models.IntegerField()
@@ -40,7 +41,7 @@ class Rater(models.Model):
     zip_code = models.CharField(max_length=10)
 
     def avg_rater_rating(self):
-        return Data.objects.filter(rater=self.id).aggregate(Avg('rating'))
+        return Data.objects.filter(rater=self.id).aggregate(Avg('rating')).get('rating__avg')
 
 class Data(models.Model):
     rater = models.ForeignKey(Rater)
