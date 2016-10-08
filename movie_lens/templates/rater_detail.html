@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Rater Detail</title>
+  </head>
+  <body>
+    <p>
+      <a href="/">Back to Home Page</a>
+      <h1>Rater Information</h1>
+      <p>
+        <h3>Rater ID</h3>
+        {{ rater.id }}
+
+        <h3>Gender</h3>
+        {{ rater.gender }}
+
+        <h3>Occupation</h3>
+        {{ rater.occupation }}
+
+        <h3>Zip Code</h3>
+        {{ rater.zip_code }}
+
+        <h3>Movie Watched, Rating</h3>
+        {% for row in movies_rated %}
+
+        <p>
+          <a href="/movie_detail/{{ row.item.id }}">{{ row.item.title }}</a>, {{ row.rating }}
+        </p>
+        {% endfor %}
+
+      </p>
+    </p>
+  </body>
+</html>

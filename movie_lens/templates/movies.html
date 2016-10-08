@@ -10,7 +10,7 @@
     <p>
       {% for row in all_movies %}
         <p>
-          <a href="/mov_det/{{ row.id }}">{{ row }}</a>, {{ row.avg_movie_rating }}
+          <a href="/movie_detail/{{ row.id }}">{{ row }}</a>
         </p>
       {% endfor %}
     </p>

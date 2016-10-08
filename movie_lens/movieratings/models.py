@@ -33,6 +33,7 @@ class Item(models.Model):
     def avg_movie_rating(self):
         return Data.objects.filter(item=self).aggregate(Avg('rating')).get('rating__avg')
 
+    
 
 class Rater(models.Model):
     age = models.IntegerField()

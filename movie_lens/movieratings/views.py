@@ -29,8 +29,17 @@ def rater_view(request):
     }
     return render(request, 'raters.html', context)
 
-def movie_details(request, movie_id):
+def movie_detail(request, movie_id):
     context = {
-        "movie": Item.objects.get(id=movie_id)
+        "movie": Item.objects.get(id=movie_id),
+        "rater_of_movie": Data.objects.filter(item=movie_id)
     }
-    return render(request, 'mov_det.html', context)
+    return render(request, 'movie_detail.html', context)
+
+def rater_detail(request, rater_id):
+    context = {
+        "rater": Rater.objects.get(id=rater_id),
+        "movies_rated": Data.objects.filter(rater=rater_id)
+
+    }
+    return render(request, 'rater_detail.html', context)
