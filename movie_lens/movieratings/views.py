@@ -5,7 +5,7 @@ from django.db.models import Avg
 
 def index_view(request):
     context = {
-        "top": "Top 20 Movies",
+        "top": "Top 20 Rated Movies",
         "all_mov": "All Movies",
         'all_rate': "All Raters"
     }

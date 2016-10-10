@@ -3,16 +3,40 @@
   <head>
     <meta charset="utf-8">
     <title>Top 20 Rated Movies</title>
+    <style>
+      body{background-color: #FCF0E0;
+           font-family: helvetica;
+           text-align: center;
+           color: darkred;
+           border: 100px solid #4d394b;
+           border-top: 25px solid #4d394b;
+           border-bottom: 25px solid #4d394b;
+           margin: 0px;
+      }
+
+      h1 {font-size: 200%;
+      }
+
+      h3 {font-size: 150%;
+          text-decoration: underline
+      }
+
+
+      a:hover{
+        color: gold;
+        background-color: darkgray;
+        border: 5px solid darkred;
+      }
+  </style>
   </head>
   <body>
     <a href="/">Back to Home Page</a>
     <h1>Top 20 Rated Movies</h1>
-    <p>
+    <h3>Movie Title, Average Rating</h3>
       {% for row in top_movies %}
       <p>
         <a href="/movie_detail/{{ row.id }}">{{ row.title }}</a>, {{ row.avg_movie_rating }}
       </p>
       {% endfor %}
-    </p>
   </body>
 </html>

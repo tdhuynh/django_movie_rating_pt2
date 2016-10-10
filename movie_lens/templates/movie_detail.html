@@ -3,23 +3,46 @@
   <head>
     <meta charset="utf-8">
     <title>Movie Detail</title>
+    <style>
+      body{background-color: #FCF0E0;
+           font-family: helvetica;
+           text-align: center;
+           color: darkred;
+           border: 100px solid #4d394b;
+           border-top: 25px solid #4d394b;
+           border-bottom: 25px solid #4d394b;
+           margin: 0px;
+      }
+
+      h1 {font-size: 200%;
+      }
+
+      h3 {font-size: 150%;
+          text-decoration: underline
+      }
+
+
+      a:hover{
+        color: gold;
+        background-color: darkgray;
+        border: 5px solid darkred;
+      }
+  </style>
   </head>
   <body>
     <a href="/">Back to Home Page</a>
     <h1>Movie Rating Information</h1>
+    <h3>Movie Name</h3>
+    {{ movie }}
+
+    <h3>Average Rating</h3>
+    {{ movie.avg_movie_rating }}
+
+    <h3>Rater ID, Rating</h3>
+    {% for row in rater_of_movie %}
     <p>
-      <h3>Movie Name</h3>
-      {{ movie }}
-
-      <h3>Average Rating</h3>
-      {{ movie.avg_movie_rating }}
-
-      <h3>Rater ID, Rating</h3>
-      {% for row in rater_of_movie %}
-      <p>
-        <a href="/rater_detail/{{ row.rater.id }}">{{ row.rater.id }}</a>, {{ row.rating }}
-      </p>
-      {% endfor %}
+      <a href="/rater_detail/{{ row.rater.id }}">{{ row.rater.id }}</a>, {{ row.rating }}
     </p>
+    {% endfor %}
   </body>
 </html>

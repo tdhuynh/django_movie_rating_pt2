@@ -3,16 +3,37 @@
   <head>
     <meta charset="utf-8">
     <title>All Movies</title>
+    <style>
+      body{background-color: #FCF0E0;
+           font-family: helvetica;
+           text-align: center;
+           color: darkred;
+           border: 100px solid #4d394b;
+           border-top: 25px solid #4d394b;
+           border-bottom: 25px solid #4d394b;
+           margin: 0px;
+      }
+
+      h1 {font-size: 200%;
+      }
+
+      p {font-size: 150%;
+      }
+
+      a:hover{
+        color: gold;
+        background-color: darkgray;
+        border: 5px solid darkred;
+      }
+  </style>
   </head>
   <body>
     <a href="/">Back to Home Page</a>
     <h1>All Rated Movies</h1>
-    <p>
       {% for row in all_movies %}
         <p>
           <a href="/movie_detail/{{ row.id }}">{{ row }}</a>
         </p>
       {% endfor %}
-    </p>
   </body>
 </html>

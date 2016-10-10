@@ -34,7 +34,6 @@ class Item(models.Model):
         return round(Data.objects.filter(item=self).aggregate(Avg('rating')).get('rating__avg'), 2)
 
 
-
 class Rater(models.Model):
     age = models.IntegerField()
     gender = models.CharField(max_length=20)
@@ -43,6 +42,7 @@ class Rater(models.Model):
 
     def avg_rater_rating(self):
         return round(Data.objects.filter(rater=self).aggregate(Avg('rating')).get('rating__avg'), 2)
+
 
 class Data(models.Model):
     rater = models.ForeignKey(Rater)

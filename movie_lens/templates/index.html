@@ -2,10 +2,40 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Movie Lens Database</title>
+    <title>Movie Lens Home Page</title>
+    <style>
+      body{background-color: #FCF0E0;
+           font-family: helvetica;
+           text-align: center;
+           color: darkred;
+           border: 50px solid #4d394b;
+           border-top: 25px solid #4d394b;
+           border-bottom: 25px solid #4d394b;
+           margin: 0px;
+      }
+
+      h1 {font-size: 200%;
+      }
+
+      h3 {font-size: 200%;
+      }
+
+      p {font-size: 150%;
+         border: 7px solid purple;
+         padding: 10px;
+         margin: 100px;
+      }
+
+      a:hover{
+        color: gold;
+        background-color: darkgray;
+        border: 5px solid darkred;
+      }
+  </style>
   </head>
+
   <body>
-    <h1>Welcome to the Movie Lens Database!</h1>
+    <h1>Welcome to the Movie Lens Project!</h1>
     <p>
       <a href="top_movies">{{ top }}</a>
     </p>
